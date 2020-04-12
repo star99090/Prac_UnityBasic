@@ -4,22 +4,25 @@ using UnityEngine;
 
 public class LifeCycle : MonoBehaviour
 {
+    
     void Start()
     {
 
     }
-
+    
     void Update()
     {
         //int number = 4; 이런 단순한 값을 '스칼라' 라고 부른다. 그 값에 방향이 붙으면 벡터
-        Vector3 vec = new Vector3(
-            Input.GetAxisRaw("Horizontal"),
-            Input.GetAxisRaw("Vertical"),
+        Vector3 vec = new Vector3( //Time.deltaTime : 이전 프레임의 완료까지 걸린 시간   
+                                   //이걸 안하면 컴퓨터 사양에 따라 속도가 달라져서 꼭 해야함
+                                   //게임 상에서 가능한, 최대한 사양에 구애받지 않고 진행되게 함
+            Input.GetAxisRaw("Horizontal")*Time.deltaTime,
+            Input.GetAxisRaw("Vertical")*Time.deltaTime,
             0); // x, y, z 값을 갖는 '벡터'
         transform.Translate(vec); // Translate : 벡터 값을 현재 위치에 더하는 함수(이동)
                                   // Vectror2 하면 2D, 3하면 3D
     }
-
+    
 
 
     // void Update() // 게임 로직 업데이트, 환경에 따라 실행주기가 떨어질 수 있음
