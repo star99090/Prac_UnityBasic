@@ -1,0 +1,26 @@
+RigidBody : 중력 추가하기
+	ㄴ Mass : 무게(속도에는 영향이 없다)
+		수치가 높을수록 충돌이 무거워진다.
+	ㄴ Use Gravity : 중력을 받는지를 결정
+	ㄴ Is Kinematic : 외부 물리 효과를 무시
+		          스크립트를 통해서 이동시킬때만 이동
+		          움직이는 장애물이나 함정 만들때 유용
+Collider : 물리효과를 받게한다
+	충돌 영역 정하기(없애면 걍 쭉 내려감)
+	ㄴ Radius 값을 크게 하면 더 자세한 조정 가능!
+Material : 재질(눈에 보여지는 재질)
+	ㄴ Albedo : 색상 변경, 옆의 칸에 이미지 넣으면 무늬 추가
+		ㄴTexture : 재질에 들어가는 이미지
+	ㄴ Metallic : 금속 재질 효과 조절
+	ㄴ Smoothness : 빛 반사 수치
+	ㄴ Tiling : 반복전인 텍스쳐
+	ㄴ Emission : 텍스쳐 발광(밝기) 조절
+creat - Physics Material : 물리 재질(탄성과 마찰을 다룬다)
+	ㄴ Bounciness : 탄성력, 높을수록 많이 튀어오름(최대1)
+	ㄴ Bouncines Combine : 다음 탄성을 계산하는 방식
+	ㄴ Friction : 마찰력, 낮을수록 많이 미끄러짐
+		ㄴ Static : 정지했을때 갖는 마찰력(보통 Dynamic보단 큰 편)
+		ㄴ Dynamic : 움직일때 갖는 마찰력
+		ㄴ 완전 빙판같은 느낌은 프릭션 컴바인을 미니멈으로 해줘야함
+
+
