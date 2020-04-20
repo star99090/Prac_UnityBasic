@@ -1,0 +1,19 @@
+Image는 끌어오면 Textture Type을 Sprite로 바꿔주고 추가해야한다.
+
+Image Type을 바꾸면 쿨타임 적용시키는 모습처럼 사용 가능
+
+ctrl + D는 오브젝트를 복사해버릴 수 있다.
+
+오브젝트 목록에는 아래쪽에 만들어질수록 제일 위에 그려진다.
+
+Image Type 중에 Sliced는 버튼에서 주로 쓰이는 기능이며
+모서리는 유지해주고 가운데는 대충 채워준다~ 라는 기능이다.
+
+Button 옵션 중에 Interactable를 올려야 반응을 하는 버튼이 된다.
+ㄴ Color Tint : 반응을 색상변경으로
+	ㄴ Normal Color : 평소 색상
+	ㄴ Highlighted Color : 마우스 올라간 색상
+	ㄴ Pressed Color : 누를 때 색상
+ㄴ Rect Transform의 앵커 맞추기! shift누른채, alt누른채로 누르면 고정점이 변함
+	ㄴ Disable Color : 비활성화 되었을 때의 색상
+ㄴ OnClick( ) : 버튼 클릭 시 호출되는 이벤트 함수

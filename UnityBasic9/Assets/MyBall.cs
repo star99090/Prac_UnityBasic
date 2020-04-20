@@ -9,8 +9,6 @@ public class MyBall : MonoBehaviour
     void Start()
     {
         rigid = GetComponent<Rigidbody>();    
-
-        
     }
 
     // Update is called once per frame
@@ -41,12 +39,14 @@ public class MyBall : MonoBehaviour
     private void OnTriggerStay(Collider other) // 콜라이더가 계속 충돌하고 있을 때 호출
     {
         if(other.name == "Cube")
-        {
             rigid.AddForce(Vector3.up * 2, ForceMode.Impulse);
-        }
     }
-}
-/*
+
+    public void Jump()
+    {
+        rigid.AddForce(Vector3.up * 20, ForceMode.Impulse);
+    }
+    /*
 //실제 물리적인 충돌로 발생하는 이벤트
 void OnCollisionEnter(Collision collision) { }
 void OnCollisionStay(Collision collision) { }
@@ -57,3 +57,5 @@ void OnTriggerEnter(Collider other) { }
 void OnTriggerStya(Collider other) { }
 void OnTriggerExit(Collider other) { }
 */
+}
+
