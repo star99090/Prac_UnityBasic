@@ -21,7 +21,7 @@ public class EnemyMove : MonoBehaviour
     
     void FixedUpdate()
     {
-        //이동방향 바라보게 하기(미완성)
+        //이동방향 바라보게 하기
         if (nextAction != 0)
             spriteRenderer.flipX = nextAction == 1;
 
