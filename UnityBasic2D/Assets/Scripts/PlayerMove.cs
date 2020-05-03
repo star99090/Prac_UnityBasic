@@ -64,12 +64,12 @@ public class PlayerMove : MonoBehaviour
 
         //Raycast : 오브젝트 검색을 위해 ray를 쏘는 방식(3D에서는 OnColliderEnter를 썼다)
         //Landing platform, 점프했을 때 행동 한 번하고 멈추는거를 수정하기위해 만들어진 부분
-        Debug.DrawRay(rigid.position, Vector3.down, new Color(0,1,0)); // 에디터 상에서만 Ray를 그려주는 함수(시작위치,쏘는방향
-
+        //DrawRay() : 에디터 상에서만 Ray를 그려주는 함수(시작위치,쏘는방향)
         //rayHit : 우리가 쏜 빔에 맞은 오브젝트의 정보를 받아온다
         //y축이 감소할 때(중력받고 내려가는 중) 그때만 레이를 쏜다
         if(rigid.velocity.y < 0)
         {
+            Debug.DrawRay(rigid.position, Vector3.down, new Color(0, 1, 0));
             RaycastHit2D rayHit = Physics2D.Raycast(rigid.position, Vector3.down, 1/*단위벡터*/, LayerMask.GetMask("Platform"));
             if (rayHit.collider != null)
             {
