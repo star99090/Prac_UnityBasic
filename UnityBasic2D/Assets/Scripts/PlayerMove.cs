@@ -53,7 +53,7 @@ public class PlayerMove : MonoBehaviour
     {
         float h = Input.GetAxisRaw("Horizontal");
 
-        rigid.AddForce(Vector2.right * h, ForceMode2D.Impulse);
+        rigid.AddForce(Vector2.right * h * 3, ForceMode2D.Impulse);
 
         //오른쪽 이동 Max Speed
         if (rigid.velocity.x > maxSpeed)
