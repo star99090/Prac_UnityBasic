@@ -78,5 +78,39 @@ public class PlayerMove : MonoBehaviour
             }
         } 
     }
-    
+    //충돌 효과는 OnCollisionEnter
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Enemy")
+        {
+            OnDamaged(collision.transform.position);
+        }
+        
+    }
+
+    void OnDamaged(Vector2 targetPos)
+    {
+        //맞으면 데미지 맞은 레이어로 이동
+        gameObject.layer = 11;
+
+        //맞은 이펙트
+        spriteRenderer.color = new Color(1, 1, 1, 0.4f);
+
+        //맞아서 생기는 이동
+        int dirc = transform.position.x-targetPos.x > 0? 1 : -1;
+        rigid.AddForce(new Vector2(dirc, 1)*7, ForceMode2D.Impulse);
+
+        //애니메이션
+        ani.SetTrigger("doDamaged");
+
+        //원상태로 복귀
+        Invoke("OffDamaged", 2);
+    }
+
+    void OffDamaged()
+    {
+        gameObject.layer = 10;
+
+        spriteRenderer.color = new Color(1, 1, 1, 1);
+    }
 }
